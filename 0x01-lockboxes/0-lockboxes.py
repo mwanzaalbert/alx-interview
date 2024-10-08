@@ -1,4 +1,20 @@
+#!/usr/bin/python3
+"""
+This module provides implementation of Lockboxes problem.
+
+It contains one main function: `canUnlockAll` which determines
+if all the boxes can be opened.
+
+Created on Wed Oct  2 01:32:33 2024.
+
+@author: Albert Mwanza
+"""
+
+
 def canUnlockAll(boxes):
+    """
+    Determines if all the boxes can be opened.
+    """
     # Initialize a set to keep track of unlocked boxes, starting with box 0
     unlocked_boxes = set([0])
     
@@ -10,9 +26,12 @@ def canUnlockAll(boxes):
         key = keys.pop()
         if key < len(boxes) and key not in unlocked_boxes:
             unlocked_boxes.add(key)
-            keys.update(boxes[key])  # Add new keys from this newly unlocked box
+            
+            # Add new keys from this newly unlocked box
+            keys.update(boxes[key])
     
-    # If the number of unlocked boxes is equal to the total number of boxes, return True
+    # If the number of unlocked boxes is equal to the total number of boxes,
+    # return True
     return len(unlocked_boxes) == len(boxes)
 
 
