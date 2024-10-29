@@ -11,7 +11,7 @@ UTF-8 characters according to the UTF-8 encoding scheme.
 from typing import List
 
 
-def validUTF8(data: List[int]) -> bool:
+def validUTF8(data):
     """
     Determines if a given data set represents a valid UTF-8 encoding.
 
@@ -38,11 +38,11 @@ def validUTF8(data: List[int]) -> bool:
     """
 
     # Track number of bytes remaining in the current UTF-8 character
-    n_bytes: int = 0
+    n_bytes = 0
 
     # Masks to check the leading bits in each byte
-    mask1: int = 1 << 7  # 10000000
-    mask2: int = 1 << 6  # 01000000
+    mask1 = 1 << 7  # 10000000
+    mask2 = 1 << 6  # 01000000
 
     for num in data:
         # Obtain only the last 8 bits (simulate one byte)
