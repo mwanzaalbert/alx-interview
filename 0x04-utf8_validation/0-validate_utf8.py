@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
 UTF-8 Validation Module
 
@@ -77,6 +76,6 @@ if __name__ == "__main__":
     doctest.testmod(verbose=True)
 
     dataset = [80, 121, 116, 104, 111, 110, 32,
-            105, 115, 32, 99, 111, 111, 108, 33]
+               105, 115, 32, 99, 111, 111, 108, 33]
     print()
     print(validUTF8(dataset))
